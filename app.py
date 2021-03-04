@@ -15,11 +15,11 @@ driver.find_element_by_id("login").send_keys(os.environ["GPORTAL_EMAIL"])
 driver.find_element_by_id("password").send_keys(os.environ["GPORTAL_PASSWORD"])
 driver.find_element_by_class_name("submit").click()
 
-# Just print the contents
-print(driver.page_source)
+# Deubgging: print the contents
+# print(driver.page_source)
 
 # Create Backup
-# driver.find_element_by_id("make_backup").click()
-# driver.find_element_by_css_selector(
-#     "body > div.dialog.dialog--size-default > div > div > div > div > button:nth-child(2)"
-# ).click()
+driver.find_element_by_id("make_backup").click()
+driver.find_element_by_css_selector(
+    "body > div.dialog.dialog--size-default > div > div > div > div > button:nth-child(2)"
+).click()
