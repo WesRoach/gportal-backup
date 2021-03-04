@@ -1,0 +1,28 @@
+name: Manually Create Backup
+on:
+  workflow_dispatch:
+
+jobs:
+  create_backup:
+    runs-on: ubuntu-latest
+    services:
+      hub:
+        image: selenium/standalone-chrome
+        env:
+          HUB_HOST: hub
+          HUB_PORT: 4444
+        ports:
+          - 4444:4444
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install
+        run: |
+          pip install -r requirements.txt
+      - name: Create Backup
+        env:
+          GPORTAL_EMAIL: ${{ secrets.GPORTAL_EMAIL }}
+          GPORTAL_PASSWORD: ${{ secrets.GPORTAL_PASSWORD }}
+        run: |
+          python app.py
