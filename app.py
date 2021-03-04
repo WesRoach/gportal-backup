@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 driver = webdriver.Remote(
-    command_executor="https://hub:4444/wd/hub",
+    command_executor="https://localhost:4444/wd/hub",
     desired_capabilities=DesiredCapabilities.CHROME,
 )
 
