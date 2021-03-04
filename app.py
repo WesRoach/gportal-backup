@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 driver = webdriver.Remote(
-    command_executor="https://localhost:4444/wd/hub",
+    command_executor="http://localhost:4444/wd/hub",
     desired_capabilities=DesiredCapabilities.CHROME,
 )
 
@@ -16,7 +16,7 @@ driver.find_element_by_id("password").send_keys(os.environ["GPORTAL_PASSWORD"])
 driver.find_element_by_class_name("submit").click()
 
 # Just print the contents
-driver.page_source
+print(driver.page_source)
 
 # Create Backup
 # driver.find_element_by_id("make_backup").click()
