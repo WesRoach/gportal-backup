@@ -1,3 +1,8 @@
+"""
+Useful Links:
+https://selenium-python.readthedocs.io/waits.html
+"""
+
 import os
 
 from selenium import webdriver
@@ -7,6 +12,9 @@ driver = webdriver.Remote(
     command_executor="http://localhost:4444/wd/hub",
     desired_capabilities=DesiredCapabilities.CHROME,
 )
+
+# Wait up to 10 seconds for any element we're looking for to load
+driver.implicitly_wait(10)
 
 driver.get("https://www.g-portal.com/int/server/valheim/400137/system/backup")
 
