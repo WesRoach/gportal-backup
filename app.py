@@ -16,7 +16,7 @@ driver = webdriver.Remote(
 # Wait up to 10 seconds for any element we're looking for to load
 driver.implicitly_wait(10)
 
-driver.get("https://www.g-portal.com/int/server/valheim/400137/system/backup")
+driver.get(os.environ["GPORTAL_BACKUP_URL"])
 
 # Navigate Authentication
 driver.find_element_by_id("login").send_keys(os.environ["GPORTAL_EMAIL"])

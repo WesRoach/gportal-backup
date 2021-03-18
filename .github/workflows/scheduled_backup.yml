@@ -25,5 +25,6 @@ jobs:
         env:
           GPORTAL_EMAIL: ${{ secrets.GPORTAL_EMAIL }}
           GPORTAL_PASSWORD: ${{ secrets.GPORTAL_PASSWORD }}
+          GPORTAL_BACKUP_URL: ${{ secrets.GPORTAL_BACKUP_URL }}
         run: |
           python app.py
