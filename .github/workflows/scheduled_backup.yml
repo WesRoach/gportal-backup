@@ -23,8 +23,8 @@ jobs:
           pip install -r requirements.txt
       - name: Create Backup
         env:
-          GPORTAL_EMAIL: ${{ secrets.GPORTAL_EMAIL }}
-          GPORTAL_PASSWORD: ${{ secrets.GPORTAL_PASSWORD }}
-          GPORTAL_BACKUP_URL: ${{ secrets.GPORTAL_BACKUP_URL }}
+          GPORTAL_EMAIL: ${{ tomaszstrnad@seznam.cz }}
+          GPORTAL_PASSWORD: ${{ LachtaN123 }}
+          GPORTAL_BACKUP_URL: ${{ https://www.g-portal.com/eur/server/minecraft/4152289/system/backup }}
         run: |
           python app.py
